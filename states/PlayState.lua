@@ -37,10 +37,10 @@ function PlayState:update(dt)
         if self.isPaused == false then 
             --gStateMachine:change('pause')
             --TODO pause logic
+            -- render text 
+            -- bird dy to 0 
             self.isPaused = true
             scrolling = false
-            --TODO render text 
-            --TODO bird DY to 0 ? 
         else
             self.isPaused = false
         end
@@ -133,13 +133,13 @@ end
 --[[
     Called when this state is transitioned to from another state.
 ]]
---TODO can readd params if needed 
+--HINT can readd params if needed 
 function PlayState:enter()
     -- if we're coming from death, restart scrolling
     -- if params.previousState ~= 'pause' then 
     --     self.score = params.score
     -- end 
-    --scrolling = true
+    scrolling = true
 end
 
 --[[
@@ -147,5 +147,5 @@ end
 ]]
 function PlayState:exit()
     -- stop scrolling for the death/score screen
-    --scrolling = false
+    scrolling = false
 end
